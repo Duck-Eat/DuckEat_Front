@@ -1,0 +1,7 @@
+{
+  "name": "DuckEat_Front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
