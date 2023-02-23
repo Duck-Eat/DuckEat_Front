@@ -12,14 +12,30 @@ export class AuthServiceService {
   constructor(private http: HttpClient) {
   }
 
-  login(email: string, password: string): Observable<boolean>{
+  login(email: string, password: string): Observable<boolean> {
     const httpOptions = {
-      headers: new HttpHeaders({'Content-Type':  'application/json'})
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
     };
+
     this.http.post<boolean>(`${environment.baseApiUrl}/login`,
-      {id: 0, email: email, password: password},
+      { id: 0, email: email, password: password },
       httpOptions
-    ).subscribe(x => console.log(x))
+    ).subscribe(x => console.log(x));
+
+    return of(true).pipe(
+      delay(1000),
+    )
+  }
+
+  signup(name: string, email: string, password: string, password_confirmed: string): Observable<boolean> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+
+    this.http.post<boolean>(`${environment.baseApiUrl}/register`,
+      { name: name, email: email, password: password, password_confirmed: password_confirmed },
+      httpOptions
+    ).subscribe(x => console.log(x));
 
     return of(true).pipe(
       delay(1000),
