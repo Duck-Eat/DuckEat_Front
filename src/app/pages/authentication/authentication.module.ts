@@ -9,6 +9,7 @@ import { AuthenticationPageRoutingModule } from './authentication-routing.module
 import { AuthenticationPage } from './authentication.page';
 import { ConnectionComponent } from 'src/app/components/connection/connection.component';
 import { InscriptionComponent } from 'src/app/components/inscription/inscription.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [

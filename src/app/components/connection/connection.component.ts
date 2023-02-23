@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthServiceService} from "../../services/auth-service.service";
 
 @Component({
   selector: 'app-connection',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnectionComponent implements OnInit {
 
-  constructor() { }
+  email!: string
+  password!: string
+
+  constructor(public _authService: AuthServiceService) { }
 
   ngOnInit() {}
 
   onSubmit() {
-
+    this._authService?.login(this.email,this.password)
   }
 
 }

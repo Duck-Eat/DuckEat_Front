@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SegmentChangeEventDetail } from '@ionic/angular';
+import {AuthServiceService} from "../../services/auth-service.service";
 
 @Component({
   selector: 'app-authentication',
@@ -8,10 +9,11 @@ import { SegmentChangeEventDetail } from '@ionic/angular';
 })
 export class AuthenticationPage implements OnInit {
 
-  constructor() { }
-
   selectMode : string = "connection";
 
+
+  constructor() {
+  }
   ngOnInit() {
   }
 
@@ -19,5 +21,6 @@ export class AuthenticationPage implements OnInit {
     this.selectMode = e.detail.value;
     console.log(e.detail.value);
   }
+
 
 }
