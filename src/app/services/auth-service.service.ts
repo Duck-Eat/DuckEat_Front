@@ -14,17 +14,19 @@ export class AuthServiceService {
   }
 
   login(email: string, password: string) {
-    const httpOptions = {
+/*    const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     };
+*/
 
     this.http.post<AuthResponse>(`${environment.baseApiUrl}/login`,
-      { id: 0, email: email, password: password },
-      httpOptions
+      { id: 0, email: email, password: password }
     ).subscribe(data => {
       this.userData = data
       console.log(this.userData)
-    });
+
+      localStorage.setItem("duck-token", JSON.stringify(data))
+    })
 
   }
 
@@ -36,7 +38,7 @@ export class AuthServiceService {
     this.http.post<boolean>(`${environment.baseApiUrl}/register`,
       { name: name, email: email, password: password, password_confirmation: password_confirmation },
       httpOptions
-    ).subscribe(x => console.log(x));
+    ).subscribe(x => console.log(x))
 
     return of(true).pipe(
       delay(1000),
