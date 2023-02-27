@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>authentication</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="changeUI($event)" value="connection">
+    <ion-segment-button value="connection">
+      <ion-label>Connexion</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="inscription">
+      <ion-label>Inscription</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <app-connection *ngIf="selectMode === 'connection'"></app-connection>
+  <app-inscription *ngIf="selectMode === 'inscription'"></app-inscription>
+</ion-content>
