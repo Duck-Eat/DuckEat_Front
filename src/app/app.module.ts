@@ -6,13 +6,16 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http";
 import {IonicStorageModule} from "@ionic/storage-angular";
+
+import { CommonInterceptor } from './interceptors/common.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: CommonInterceptor, multi: true }],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,IonicStorageModule.forRoot()],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
