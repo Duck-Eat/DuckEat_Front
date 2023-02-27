@@ -19,8 +19,6 @@ export class InscriptionComponent implements OnInit {
 
   onSubmit() {
     this._authService?.signup(this.name, this.email, this.password, this.confirm);
-
-    console.log(this.name + ", " + this.email + ", " + this.password + ", " + this.confirm);
   }
 
 }
