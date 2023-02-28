@@ -29,6 +29,7 @@ export class AuthServiceService {
         console.log("Error")
       });
   }
+
   async signup(name: string, email: string, password: string, password_confirmation: string) {
     this.http.post<AuthResponse>(`${environment.baseApiUrl}/register`,
       { name: name, email: email, password: password, password_confirmation: password_confirmation },
@@ -41,9 +42,11 @@ export class AuthServiceService {
         console.log("Error")
       });
   }
+
   async setUserData(data: AuthResponse): Promise<boolean>{
     return await this.storage.set('userData', data)
   }
+
   async checkConnection(): Promise<boolean> {
     // Vérifiez l'état de connexion en récupérant les informations de connexion du Storage
     const userData = await this.storage.get('userData');
@@ -54,6 +57,7 @@ export class AuthServiceService {
     }
     return this.isLoggedIn;
   }
+
   async logout(){
     this.storage.get('userData').then(x=> {
       this.userData = x

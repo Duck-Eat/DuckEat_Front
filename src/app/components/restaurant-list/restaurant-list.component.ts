@@ -15,4 +15,8 @@ export class RestaurantListComponent implements OnInit {
 
   listRestaurant = RESTAURANTS;
 
+  onIonInfinite(_ev: any) {
+    console.log("test");
+  }
+
 }
