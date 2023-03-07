@@ -11,14 +11,10 @@ import {Router} from "@angular/router";
 export class AuthenticationPage implements OnInit {
   selectMode : string = "connection";
 
-  constructor(private authServiceService: AuthServiceService, private router: Router) {
+  constructor() {
   }
   ngOnInit() {
-    this.authServiceService.checkConnection().then(x => {
-      if(x != false){
-        this.router.navigate(['/home'])
-      }
-    })
+
   }
 
   changeUI(e:any) {
