@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ResultsPageRoutingModule } from './results-routing.module';
 
 import { ResultsPage } from './results.page';
+import { RestaurantListComponent } from 'src/app/components/restaurant-list/restaurant-list.component';
+import { RestaurantComponent } from 'src/app/components/restaurant/restaurant.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,10 @@ import { ResultsPage } from './results.page';
     IonicModule,
     ResultsPageRoutingModule
   ],
-  declarations: [ResultsPage]
+  declarations: [
+    ResultsPage,
+    RestaurantListComponent,
+    RestaurantComponent
+  ]
 })
 export class ResultsPageModule {}

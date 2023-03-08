@@ -7,6 +7,10 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { RestaurantListComponent } from '../components/restaurant-list/restaurant-list.component';
 import { RestaurantComponent } from '../components/restaurant/restaurant.component';
+import { ResultsPage } from '../pages/results/results.page';
+import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from '../components/footer/footer.component';
+import { SideMenuComponent } from '../components/side-menu/side-menu.component';
 
 
 @NgModule({
@@ -18,8 +22,9 @@ import { RestaurantComponent } from '../components/restaurant/restaurant.compone
   ],
   declarations: [
     HomePage,
-    RestaurantListComponent,
-    RestaurantComponent
+    HeaderComponent,
+    FooterComponent,
+    SideMenuComponent
   ]
 })
 export class HomePageModule {}

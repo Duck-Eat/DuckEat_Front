@@ -16,12 +16,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'choose-restaurant',
+    loadChildren: () => import('./pages/choose-restaurant/choose-restaurant.module').then( m => m.ChooseRestaurantPageModule)
   },
-
   {
-    path: 'main',
-    loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
-  },
+    path: 'results',
+    loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule)
+  }
+
 ];
 
 @NgModule({
