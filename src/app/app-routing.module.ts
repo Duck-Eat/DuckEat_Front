@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'results',
     loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule)
+  },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
   }
 
 ];
