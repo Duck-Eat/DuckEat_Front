@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { RESTAURANTS } from 'src/app/models/restaurant-mock';
+import { RestaurantResponse } from 'src/app/models/restaurant-response';
+import { RestaurantServiceService } from 'src/app/services/restaurant-service.service';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -9,11 +11,16 @@ import { RESTAURANTS } from 'src/app/models/restaurant-mock';
 })
 export class RestaurantListComponent implements OnInit {
 
-  constructor() { }
+  dataRestaurant!: RestaurantResponse[];
 
-  ngOnInit() {}
+  constructor(public _restaurantService: RestaurantServiceService) {}
 
-  listRestaurant = RESTAURANTS;
+  ngOnInit() {
+    this._restaurantService.getRestaurants().subscribe({
+      next: (res: any) => this.dataRestaurant = res.data,
+      error: error => console.error(error)
+    })
+  }
 
   onIonInfinite(_ev: any) {
     // console.log("test");

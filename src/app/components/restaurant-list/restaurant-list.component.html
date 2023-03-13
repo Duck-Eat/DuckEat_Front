@@ -1,6 +1,6 @@
 <ion-list>
-  <ion-item *ngFor="let restaurant of listRestaurant">
-    <app-restaurant></app-restaurant>
+  <ion-item *ngFor="let restaurant of dataRestaurant">
+    <app-restaurant [restaurant]="restaurant"></app-restaurant>
   </ion-item>
 </ion-list>
 

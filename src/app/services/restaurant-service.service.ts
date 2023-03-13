@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {environment} from "../../environments/environment";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { environment } from "../../environments/environment";
 import { Storage } from '@ionic/storage-angular';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class RestaurantServiceService {
     this.storage.create();
   }
 
-  async getRestaurants(number: number) {
-    // this.http.get<?>
+  getRestaurants(): Observable<any>{
+    return this.http.get(`${environment.baseApiUrl}/restaurants`);
   }
 
   async getRandomRestaurant() {

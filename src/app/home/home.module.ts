@@ -11,7 +11,7 @@ import { ResultsPage } from '../pages/results/results.page';
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { SideMenuComponent } from '../components/side-menu/side-menu.component';
-
+import { TruncatePipe } from '../pipes/truncate.pipe';
 
 @NgModule({
   imports: [

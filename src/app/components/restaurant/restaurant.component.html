@@ -1,14 +1,16 @@
-<ion-card>
-  <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Silhouette of mountains">
+<div *ngIf="restaurant">
+  <ion-card>
+    <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Silhouette of mountains">
 
-  <ion-card-header>
-    <ion-card-title>Restaurant Name</ion-card-title>
-    <ion-card-subtitle>Restaurant Adresse</ion-card-subtitle>
-  </ion-card-header>
+    <ion-card-header>
+      <ion-card-title>{{restaurant.name}}</ion-card-title>
+      <ion-card-subtitle>{{restaurant.address}}, {{restaurant.city}}</ion-card-subtitle>
+    </ion-card-header>
 
-  <ion-card-content>
-    Here is the restaurant description for the card content. This is a placeholder for the moment being.
-  </ion-card-content>
+    <ion-card-content *ngIf="restaurant.description">
+      {{restaurant.description | truncate:125}}
+    </ion-card-content>
 
-  <ion-button fill="clear">See More</ion-button>
-</ion-card>
+    <ion-button fill="clear">See More</ion-button>
+  </ion-card>
+</div>
