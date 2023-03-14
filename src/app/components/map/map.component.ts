@@ -23,9 +23,10 @@ export class MapComponent implements OnInit {
 
   private async initMap() {
     let mapCenter: any = [ 48.8566, 2.3522 ];
-    const coordinates = await Geolocation.getCurrentPosition();
 
-    if (coordinates != undefined) {
+    if ((await Geolocation.checkPermissions()).location === "granted") {
+      console.log("granted");
+      const coordinates = await Geolocation.getCurrentPosition();
       mapCenter = [ coordinates.coords.latitude, coordinates.coords.longitude ];
     }
 
