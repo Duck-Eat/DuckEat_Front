@@ -13,11 +13,6 @@ export class MapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const printCurrentPosition = async () => {
-      const coordinates = await Geolocation.getCurrentPosition();
-
-      console.log('Current position:', coordinates);
-    };
   }
 
   ngAfterViewInit() {
@@ -26,11 +21,20 @@ export class MapComponent implements OnInit {
 
   private map: any;
 
-  private initMap() {
+  private async initMap() {
+    let mapCenter: any = [ 48.8566, 2.3522 ];
+    const coordinates = await Geolocation.getCurrentPosition();
+
+    if (coordinates != undefined) {
+      mapCenter = [ coordinates.coords.latitude, coordinates.coords.longitude ];
+    }
+
     this.map = Leaf.map('map', {
-      center: [ 39.8282, -98.5795 ],
+      center: mapCenter,
       zoom: 3
     });
+
+    // console.log(mapCenter);
 
     const tiles = Leaf.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
