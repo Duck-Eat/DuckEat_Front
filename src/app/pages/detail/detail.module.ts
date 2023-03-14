@@ -8,6 +8,8 @@ import { DetailPageRoutingModule } from './detail-routing.module';
 
 import { DetailPage } from './detail.page';
 import { RestaurantDetailComponent } from 'src/app/components/restaurant-detail/restaurant-detail.component';
+import { StarRankingComponent } from 'src/app/components/star-ranking/star-ranking.component';
+import { MapComponent } from 'src/app/components/map/map.component';
 
 @NgModule({
   imports: [
@@ -16,6 +18,11 @@ import { RestaurantDetailComponent } from 'src/app/components/restaurant-detail/
     IonicModule,
     DetailPageRoutingModule
   ],
-  declarations: [DetailPage, RestaurantDetailComponent]
+  declarations: [
+    DetailPage,
+    RestaurantDetailComponent,
+    StarRankingComponent,
+    MapComponent
+  ]
 })
 export class DetailPageModule {}
