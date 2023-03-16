@@ -25,7 +25,6 @@ import { MapComponent } from './components/map/map.component';
     RestaurantDetailComponent,
     StarRankingComponent,
     MapComponent
-
   ],
 })
 export class DetailPageModule {}
