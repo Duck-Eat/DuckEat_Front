@@ -1,7 +1,7 @@
 <ion-content>
 
-  <ion-fab id="open-modal" slot="fixed" vertical="top" horizontal="start">
-    <ion-fab-button color="secondary">
+  <ion-fab slot="fixed" vertical="top" horizontal="start" (click)="setOpen(true)">
+    <ion-fab-button color="primary">
       <ion-icon name="chevron-down-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -21,9 +21,16 @@
     </div>
   </ion-text>
 
-  <ion-modal trigger="open-modal"> <!--(willDismiss)="onWillDismiss($event)"-->
+  <ion-modal [isOpen]="isModalOpen"> <!--(willDismiss)="onWillDismiss($event)"-->
     <ng-template>
       <app-header></app-header>
+
+      <ion-fab slot="fixed" vertical="top" horizontal="start" (click)="setOpen(false)">
+        <ion-fab-button color="secondary">
+          <ion-icon name="chevron-up-circle"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
       <ion-content class="ion-padding">
         <app-map></app-map>
       </ion-content>

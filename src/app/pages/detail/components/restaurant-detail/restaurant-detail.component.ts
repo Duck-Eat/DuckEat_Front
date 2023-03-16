@@ -11,4 +11,10 @@ export class RestaurantDetailComponent implements OnInit {
 
   ngOnInit() {}
 
+  isModalOpen: boolean = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
 }
