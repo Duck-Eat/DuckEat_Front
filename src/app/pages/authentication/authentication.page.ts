@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SegmentChangeEventDetail } from '@ionic/angular';
-import {AuthServiceService} from "../../services/auth-service.service";
+import {AuthServiceService} from "./services/auth-service.service";
 import {Router} from "@angular/router";
 
 @Component({

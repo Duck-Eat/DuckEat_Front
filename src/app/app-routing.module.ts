@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {AuthGuard} from "./guards/auth.guard";
+import {AuthGuard} from "./pages/authentication/guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -17,11 +17,23 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-
   {
-    path: 'main',
-    loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
+    path: 'choose-restaurant',
+    loadChildren: () => import('./pages/choose-restaurant/choose-restaurant.module').then( m => m.ChooseRestaurantPageModule)
   },
+  {
+    path: 'results',
+    loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule)
+  },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: 'detail',
+    loadChildren: () => import('./pages/detail/detail.module').then( m => m.DetailPageModule)
+  }
+
 ];
 
 @NgModule({
