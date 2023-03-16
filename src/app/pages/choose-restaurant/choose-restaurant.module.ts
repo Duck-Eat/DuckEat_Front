@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ChooseRestaurantPageRoutingModule } from './choose-restaurant-routing.module';
 
 import { ChooseRestaurantPage } from './choose-restaurant.page';
-import { RestaurantSelecterComponent } from 'src/app/components/restaurant-selecter/restaurant-selecter.component';
+import { RestaurantSelecterComponent } from 'src/app/pages/choose-restaurant/components/restaurant-selecter/restaurant-selecter.component';
 
 @NgModule({
   imports: [

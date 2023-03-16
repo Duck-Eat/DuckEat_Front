@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {AuthGuard} from "./guards/auth.guard";
+import {AuthGuard} from "./pages/authentication/guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -16,7 +16,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'choose-restaurant',
     loadChildren: () => import('./pages/choose-restaurant/choose-restaurant.module').then( m => m.ChooseRestaurantPageModule)
   },

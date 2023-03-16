@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import {Router} from "@angular/router";
-import {AuthServiceService} from "./services/auth-service.service";
+import {AuthServiceService} from "./pages/authentication/services/auth-service.service";
 
 @Component({
   selector: 'app-root',

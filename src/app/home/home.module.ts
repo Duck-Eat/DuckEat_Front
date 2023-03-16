@@ -5,26 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { RestaurantListComponent } from '../components/restaurant-list/restaurant-list.component';
-import { RestaurantComponent } from '../components/restaurant/restaurant.component';
-import { ResultsPage } from '../pages/results/results.page';
-import { HeaderComponent } from '../components/header/header.component';
-import { FooterComponent } from '../components/footer/footer.component';
-import { SideMenuComponent } from '../components/side-menu/side-menu.component';
-import { TruncatePipe } from '../pipes/truncate.pipe';
+import { TruncatePipe } from '../shared/pipes/truncate.pipe';
+import { SharedModule } from '../shared/module/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SharedModule
   ],
   declarations: [
-    HomePage,
-    HeaderComponent,
-    FooterComponent,
-    SideMenuComponent
-  ]
+    HomePage
+  ],
 })
 export class HomePageModule {}

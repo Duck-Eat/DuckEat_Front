@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RestaurantResponse } from 'src/app/models/restaurant-response';
+import { RestaurantResponse } from 'src/app/shared/models/restaurant-response';
 
 @Component({
   selector: 'app-restaurant',

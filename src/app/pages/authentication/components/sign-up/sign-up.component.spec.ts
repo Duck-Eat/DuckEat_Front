@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { InscriptionComponent } from './inscription.component';
+import { InscriptionComponent } from './sign-up.component';
 
 describe('InscriptionComponent', () => {
   let component: InscriptionComponent;

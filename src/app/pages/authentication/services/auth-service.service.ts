@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from "../../environments/environment";
-import { AuthResponse } from "../models/auth-response";
+import { environment } from "../../../../environments/environment";
+import { AuthResponse } from "../../../shared/models/auth-response";
 import { Storage } from '@ionic/storage-angular';
 import { Router } from "@angular/router";
 

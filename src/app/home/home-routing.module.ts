@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'results', component: ResultsPage },
       { path: 'choose', component: ChooseRestaurantPage },
-      { path: 'detail', component: DetailPage },
+      { path: 'details', component: DetailPage },
       { path: '', component: WelcomePage, pathMatch: 'full' }
     ]
   }

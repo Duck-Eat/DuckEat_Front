@@ -7,9 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { ResultsPageRoutingModule } from './results-routing.module';
 
 import { ResultsPage } from './results.page';
-import { RestaurantListComponent } from 'src/app/components/restaurant-list/restaurant-list.component';
-import { RestaurantComponent } from 'src/app/components/restaurant/restaurant.component';
-import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
+import { RestaurantListComponent } from './components/restaurant-list/restaurant-list.component';
+import { RestaurantComponent } from './components/restaurant/restaurant.component';
+import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
 
 @NgModule({
   imports: [

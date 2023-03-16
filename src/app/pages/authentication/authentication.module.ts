@@ -7,21 +7,23 @@ import { IonicModule } from '@ionic/angular';
 import { AuthenticationPageRoutingModule } from './authentication-routing.module';
 
 import { AuthenticationPage } from './authentication.page';
-import { ConnectionComponent } from 'src/app/components/connection/connection.component';
-import { InscriptionComponent } from 'src/app/components/inscription/inscription.component';
+import { ConnectionComponent } from 'src/app/pages/authentication/components/connection/connection.component';
+import { SignUpComponent } from 'src/app/pages/authentication/components/sign-up/sign-up.component';
 import {HttpClientModule} from "@angular/common/http";
+import { SharedModule } from 'src/app/shared/module/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AuthenticationPageRoutingModule
+    AuthenticationPageRoutingModule,
+    SharedModule
   ],
   declarations: [
     AuthenticationPage,
     ConnectionComponent,
-    InscriptionComponent
+    SignUpComponent
   ]
 })
 export class AuthenticationPageModule {}

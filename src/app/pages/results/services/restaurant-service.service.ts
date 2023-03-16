@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from "../../environments/environment";
+import { environment } from "../../../../environments/environment";
 import { Storage } from '@ionic/storage-angular';
 import { Router } from "@angular/router";
 import { Observable } from 'rxjs';
