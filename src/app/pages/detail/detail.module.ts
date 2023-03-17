@@ -11,6 +11,7 @@ import { SharedModule } from 'src/app/shared/module/shared.module';
 import { RestaurantDetailComponent } from './components/restaurant-detail/restaurant-detail.component';
 import { StarRankingComponent } from './components/star-ranking/star-ranking.component';
 import { MapComponent } from './components/map/map.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { MapComponent } from './components/map/map.component';
     DetailPage,
     RestaurantDetailComponent,
     StarRankingComponent,
-    MapComponent
+    MapComponent,
+    CommentsComponent
   ],
 })
 export class DetailPageModule {}

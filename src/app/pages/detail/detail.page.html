@@ -1,1 +1,9 @@
-<app-restaurant-detail></app-restaurant-detail>
+<ion-content>
+  <app-restaurant-detail></app-restaurant-detail>
+
+  <ion-list>
+    <app-comments *ngFor="let comment of comments" [comment]="comment"></app-comments>
+  </ion-list>
+</ion-content>
+
+
