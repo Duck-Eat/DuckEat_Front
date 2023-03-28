@@ -10,6 +10,8 @@ import { ResultsPage } from './results.page';
 import { RestaurantListComponent } from './components/restaurant-list/restaurant-list.component';
 import { RestaurantComponent } from './components/restaurant/restaurant.component';
 import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
+import { SwipeCardComponent } from './components/swipe-card/swipe-card.component';
+import { HammerModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
@@ -22,6 +24,7 @@ import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
     ResultsPage,
     RestaurantListComponent,
     RestaurantComponent,
+    SwipeCardComponent,
     TruncatePipe
   ]
 })

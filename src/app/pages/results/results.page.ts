@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { IonCard } from '@ionic/angular';
 
 @Component({
   selector: 'app-results',
@@ -9,7 +10,6 @@ export class ResultsPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RestaurantResponse } from 'src/app/shared/models/restaurant-response';
+import { Restaurant } from 'src/app/shared/models/restaurant';
 import { RestaurantServiceService } from 'src/app/pages/results/services/restaurant-service.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { RestaurantServiceService } from 'src/app/pages/results/services/restaur
 })
 export class RestaurantListComponent implements OnInit {
 
-  dataRestaurant!: RestaurantResponse[];
+  dataRestaurant!: Restaurant[];
 
   constructor(public _restaurantService: RestaurantServiceService) {}
 

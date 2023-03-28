@@ -1,4 +1,4 @@
-export class RestaurantResponse {
+export class Restaurant {
   constructor(
     public name: string,
     public hours: JSON,
@@ -6,6 +6,7 @@ export class RestaurantResponse {
     public address: string,
     public city: string,
     public description: string,
+    public visible: boolean = true,
     public image?: string
   ) {}
 }
