@@ -19,25 +19,26 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    this._restaurantService.getRestaurants().subscribe({
+    this._restaurantService.getRandomRestaurants().subscribe({
       next: (res: any) => this.restaurants = res.data,
       error: error => console.error(error)
-    })
+    });
   }
 
   ngAfterViewInit() {
 
     this.cards.changes.subscribe((r) => {
-      this.useTinderSwipe(this.cards.toArray());
+      this.useSwipe(this.cards.toArray());
     });
   }
 
-  useTinderSwipe(cardArray: any) {
+  useSwipe(cardArray: any) {
 
     for (let i = 0; i < cardArray.length; i++) {
-      const card = cardArray[i];
 
+      const card = cardArray[i];
       const gesture = this.gestureCtrl.create({
+
         el: card.nativeElement,
         gestureName: "swipe",
         onStart: ev => { },
@@ -46,9 +47,9 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
         },
         onEnd: ev => {
           card.nativeElement.style.transition = ".5s ease-out";
+
           if (ev.deltaX > 150) {
             card.nativeElement.style.transform = `translateX(${+this.plt.width() * 2}px) rotate(${ev.deltaX / 4}deg)`;
-
             setTimeout(() => {
               card.nativeElement.remove();
               console.log("destroyed");
@@ -56,7 +57,6 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
           } else if (ev.deltaX < -150) {
             card.nativeElement.style.transform = `translateX(-${+this.plt.width() * 2}px) rotate(${ev.deltaX / 4}deg)`;
-
             setTimeout(() => {
               card.nativeElement.remove();
               console.log("destroyed");
@@ -64,7 +64,9 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
           } else {
             card.nativeElement.style.transform = "";
-
+            setTimeout(() => {
+              card.nativeElement.style.transition = ".1s ease-out";
+            }, 500);
           }
         }
       });

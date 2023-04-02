@@ -1,24 +1,8 @@
 <ion-fab slot="fixed" vertical="top" horizontal="start" (click)="setOpen(true)">
-  <ion-fab-button color="primary">
+  <ion-fab-button color="secondary">
     <ion-icon name="chevron-down-circle"></ion-icon>
   </ion-fab-button>
 </ion-fab>
-
-
-<ion-img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="restaurant image">
-</ion-img>
-
-<ion-toolbar>
-  <ion-title>Restaurant Name</ion-title>
-</ion-toolbar>
-
-<ion-text>
-  <p class="margin">Restaurant Address, City</p>
-
-  <div class="notes-container">
-    <app-star-ranking></app-star-ranking>
-  </div>
-</ion-text>
 
 <ion-modal [isOpen]="isModalOpen"> <!--(willDismiss)="onWillDismiss($event)"-->
   <ng-template>
@@ -32,6 +16,16 @@
 
     <ion-content class="ion-padding">
       <app-map></app-map>
+
+      <div class="notes-container">
+        <app-star-ranking [value]="2.5"></app-star-ranking>
+      </div>
+
+      <!--<div *ngFor="let c of comments">
+        <app-comments [comment]="c"></app-comments>
+      </div>-->
+
     </ion-content>
+
   </ng-template>
 </ion-modal>

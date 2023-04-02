@@ -26,6 +26,7 @@ export class CommonInterceptor implements HttpInterceptor {
           'Authorization': `Bearer ${userData.token}`
         }
       });
+      console.log(userData.token);
     }
     request = request.clone({
       setHeaders: {
