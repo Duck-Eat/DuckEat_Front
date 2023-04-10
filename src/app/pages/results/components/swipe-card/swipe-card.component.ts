@@ -15,6 +15,8 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
   @ViewChildren(IonCard, { read: ElementRef })
   cards: QueryList<ElementRef>;
 
+  last: number = 9;
+
   constructor(public _restaurantService: RestaurantServiceService, private gestureCtrl: GestureController, private plt: Platform) {}
 
   ngOnInit() {
@@ -50,17 +52,11 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
           if (ev.deltaX > 150) {
             card.nativeElement.style.transform = `translateX(${+this.plt.width() * 2}px) rotate(${ev.deltaX / 4}deg)`;
-            setTimeout(() => {
-              card.nativeElement.remove();
-              console.log("destroyed");
-            }, 1000);
+            this.like(card.nativeElement, 1000);
 
           } else if (ev.deltaX < -150) {
             card.nativeElement.style.transform = `translateX(-${+this.plt.width() * 2}px) rotate(${ev.deltaX / 4}deg)`;
-            setTimeout(() => {
-              card.nativeElement.remove();
-              console.log("destroyed");
-            }, 1000);
+            this.dislike(card.nativeElement, 1000);
 
           } else {
             card.nativeElement.style.transform = "";
@@ -73,6 +69,35 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
       gesture.enable(true);
     }
+  }
+
+
+  onLiked() {
+    const cardArray = this.cards.toArray();
+    this.like(cardArray[this.last].nativeElement, 0);
+  }
+
+  onDisliked() {
+    const cardArray = this.cards.toArray();
+    this.dislike(cardArray[this.last].nativeElement, 0);
+  }
+
+  like(card: any, timer: number) {
+    this.last--;
+
+    setTimeout(() => {
+      card.remove();
+      console.log("right");
+    }, timer);
+  }
+
+  dislike(card: any, timer: number) {
+    this.last--;
+
+    setTimeout(() => {
+      card.remove();
+      console.log("left");
+    }, timer);
   }
 
 }

@@ -22,3 +22,17 @@
 .hidden {
   display: none;
 }
+
+.swipe-buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 10vh;
+}
+.heart-button {
+  position: absolute;
+  right: 10vw;
+}
+.cross-button {
+  position: relative;
+  left: 10vw;
+}

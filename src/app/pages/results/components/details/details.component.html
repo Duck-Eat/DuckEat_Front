@@ -24,8 +24,10 @@
       <!--<div *ngFor="let c of comments">
         <app-comments [comment]="c"></app-comments>
       </div>-->
-
     </ion-content>
 
+    <div *ngIf="restaurant !== undefined">
+      <app-footer [title]=restaurant.name></app-footer>
+    </div>
   </ng-template>
 </ion-modal>
