@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RestaurantResponse } from 'src/app/shared/models/restaurant-response';
+import { Restaurant } from 'src/app/shared/models/restaurant';
 
 @Component({
   selector: 'app-restaurant',
@@ -12,5 +12,5 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit() {}
 
-  @Input() restaurant?: RestaurantResponse;
+  @Input() restaurant?: Restaurant;
 }

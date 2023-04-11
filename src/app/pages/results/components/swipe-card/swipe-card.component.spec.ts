@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { DetailPage } from './detail.page';
+import { SwipeCardComponent } from './swipe-card.component';
 
-describe('DetailPage', () => {
-  let component: DetailPage;
-  let fixture: ComponentFixture<DetailPage>;
+describe('SwipeCardComponent', () => {
+  let component: SwipeCardComponent;
+  let fixture: ComponentFixture<SwipeCardComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailPage ],
+      declarations: [ SwipeCardComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DetailPage);
+    fixture = TestBed.createComponent(SwipeCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

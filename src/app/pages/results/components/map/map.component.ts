@@ -32,7 +32,7 @@ export class MapComponent implements OnInit {
 
     this.map = Leaf.map('map', {
       center: mapCenter,
-      zoom: 3
+      zoom: 16
     });
 
     // console.log(mapCenter);

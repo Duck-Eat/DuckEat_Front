@@ -1,0 +1,38 @@
+.card {
+  box-shadow: 0px 1px 3px secondary;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: absolute;
+  background-color: primary;
+}
+.card img{
+  width: 100%;
+  min-width: 10%;
+  max-width: none;
+}
+.card-title{
+  font-size: 20px;
+  margin: 10px 15px;
+}
+
+.visible {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+.swipe-buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 10vh;
+}
+.heart-button {
+  position: absolute;
+  right: 10vw;
+}
+.cross-button {
+  position: relative;
+  left: 10vw;
+}

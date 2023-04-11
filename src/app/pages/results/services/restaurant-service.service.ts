@@ -15,11 +15,15 @@ export class RestaurantServiceService {
     this.storage.create();
   }
 
-  getRestaurants(): Observable<any>{
+  getRestaurants(): Observable<any> {
     return this.http.get(`${environment.baseApiUrl}/restaurants`);
   }
 
-  async getRandomRestaurant() {
-    //
+  getRandomRestaurants(): Observable<any> {
+    return this.http.get(`${environment.baseApiUrl}/user/random`);
+  }
+
+  getRestaurantNote(id: number): Observable<any> {
+    return this.http.get(`${environment.baseApiUrl}/restaurants/note/` + id);
   }
 }
