@@ -12,4 +12,11 @@ export class ResultsPage implements OnInit {
 
   ngOnInit() { }
 
+  isEmpty: boolean = false;
+
+  setEmpty(b: boolean) {
+    this.isEmpty = b;
+    // console.log(b);
+  }
+
 }
