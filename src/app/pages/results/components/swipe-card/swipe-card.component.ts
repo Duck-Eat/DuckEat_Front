@@ -15,6 +15,7 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
   @ViewChildren(IonCard, { read: ElementRef })
   cards: QueryList<ElementRef>;
 
+  isLoading: boolean = true;
   last: number = 10;
   @Output() setEmptyEvent = new EventEmitter<boolean>();
 
@@ -22,7 +23,7 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this._restaurantService.getRandomRestaurants().subscribe({
-      next: (res: any) => this.restaurants = res.data,
+      next: (res: any) => { this.restaurants = res.data; this.isLoading = false },
       error: error => console.error(error)
     });
   }
@@ -109,5 +110,4 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
       this.setIsEmpty(true);
     }
   }
-
 }
