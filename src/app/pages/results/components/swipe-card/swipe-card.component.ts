@@ -39,7 +39,6 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
   }
 
   useSwipe(cardArray: any) {
-
     for (let i = 0; i < cardArray.length; i++) {
 
       const card = cardArray[i];
@@ -49,18 +48,25 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
         gestureName: "swipe",
         onStart: ev => { },
         onMove: ev => {
+          if (i !== this.last -1) {
+            return;
+          }
           card.nativeElement.style.transform = `translateX(${ev.deltaX}px) rotate(${ev.deltaX / 20}deg)`;
+
         },
         onEnd: ev => {
+          if (i !== this.last -1) {
+            return;
+          }
           card.nativeElement.style.transition = ".5s ease-out";
 
           if (ev.deltaX > 150) {
             card.nativeElement.style.transform = `translateX(${+this.plt.width() * 2}px) rotate(${ev.deltaX / 4}deg)`;
-            this.like(card.nativeElement, 1000);
+            this.removeCard(card.nativeElement, 1000);
 
           } else if (ev.deltaX < -150) {
             card.nativeElement.style.transform = `translateX(-${+this.plt.width() * 2}px) rotate(${ev.deltaX / 4}deg)`;
-            this.dislike(card.nativeElement, 1000);
+            this.removeCard(card.nativeElement, 1000);
 
           } else {
             card.nativeElement.style.transform = "";
@@ -77,35 +83,25 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
   onLiked() {
     const cardArray = this.cards.toArray();
-    this.like(cardArray[this.last-1].nativeElement, 0);
+    const card = cardArray[this.last-1].nativeElement;
+    this.removeCard(card, 0);
   }
 
   onDisliked() {
     const cardArray = this.cards.toArray();
-    this.dislike(cardArray[this.last-1].nativeElement, 0);
+    const card = cardArray[this.last-1].nativeElement;
+    this.removeCard(card, 0);
   }
 
-  like(card: any, timer: number) {
+  removeCard(card: any, timer: number) {
     this.setLast(this.last -1);
-
     setTimeout(() => {
       card.remove();
-      // console.log("right");
-    }, timer);
-  }
-
-  dislike(card: any, timer: number) {
-    this.setLast(this.last -1);
-
-    setTimeout(() => {
-      card.remove();
-      // console.log("left");
     }, timer);
   }
 
   setLast(n: number) {
     this.last = n;
-    // console.log(this.last);
     if (this.last <= 0) {
       this.setIsEmpty(true);
     }

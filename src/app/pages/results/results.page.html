@@ -1,10 +1,3 @@
 <app-swipe-card (setEmptyEvent)="setEmpty($event)" *ngIf="!isEmpty"></app-swipe-card>
 
-<div *ngIf="isEmpty" class="full-page">
-  <div class="content">
-    <h2 class="centered-text">Désolé =(</h2>
-    <p class="centered-text">Nous n'avons plus de restaurants pour vous. Revenez demain !</p>
-
-    <ion-button class="centered-button" [routerLink]="['/home']">Retourner au menu</ion-button>
-  </div>
-</div>
+<app-empty-cards *ngIf="isEmpty"></app-empty-cards>

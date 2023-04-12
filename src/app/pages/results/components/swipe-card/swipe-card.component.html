@@ -9,16 +9,7 @@
     </ion-card-header>
   </ion-card>
 
-  <ion-toolbar class="swipe-buttons" color="secondary">
-    <ion-button color="secondary" (click)="onDisliked()" class="cross-button">
-      <ion-icon name="close" color="danger" size="large"></ion-icon>
-    </ion-button>
-    <ion-button color="secondary" (click)="onLiked()" class="heart-button">
-      <ion-icon name="heart" color="tertiary" size="large"></ion-icon>
-    </ion-button>
-  </ion-toolbar>
+  <app-swipe-buttons (setLikedEvent)="onLiked()" (setDislikedEvent)="onDisliked()"></app-swipe-buttons>
 </ng-container>
 
-<div class="full-page">
-  <ion-spinner *ngIf="isLoading" name="lines-sharp"></ion-spinner>
-</div>
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>

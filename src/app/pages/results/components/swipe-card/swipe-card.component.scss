@@ -22,28 +22,3 @@
 .hidden {
   display: none;
 }
-
-.swipe-buttons {
-  width: 100%;
-  position: absolute;
-  bottom: 10vh;
-}
-.heart-button {
-  position: absolute;
-  right: 10vw;
-}
-.cross-button {
-  position: relative;
-  left: 10vw;
-}
-
-.full-page {
-width: 100%;
-height: 100%;
-border: none;
-border-radius: 10px;
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-}
