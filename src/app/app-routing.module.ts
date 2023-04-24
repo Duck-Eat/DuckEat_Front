@@ -18,17 +18,17 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'choose-restaurant',
-    loadChildren: () => import('./pages/choose-restaurant/choose-restaurant.module').then( m => m.ChooseRestaurantPageModule)
-  },
-  {
     path: 'results',
     loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule)
   },
   {
     path: 'welcome',
     loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },  {
+    path: 'favorites',
+    loadChildren: () => import('./pages/favorites/favorites.module').then( m => m.FavoritesPageModule)
   }
+
 
 ];
 

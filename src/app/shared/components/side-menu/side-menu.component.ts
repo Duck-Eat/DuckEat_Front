@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthServiceService} from "../../../pages/authentication/services/auth-service.service";
+import { AuthServiceService } from "../../../pages/authentication/services/auth-service.service";
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-side-menu',
@@ -8,8 +9,14 @@ import {AuthServiceService} from "../../../pages/authentication/services/auth-se
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor(public authServiceService: AuthServiceService) { }
+  private pathToFavorites: string = "/home/favorites";
+
+  constructor(public authServiceService: AuthServiceService, public navService: NavigationService) { }
 
   ngOnInit() {}
+
+  redirectTo() {
+    this.navService.redirectTo(this.pathToFavorites);
+  }
 
 }
