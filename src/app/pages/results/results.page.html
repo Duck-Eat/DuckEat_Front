@@ -1,1 +1,3 @@
-<app-swipe-card></app-swipe-card>
+<app-swipe-card (setEmptyEvent)="setEmpty($event)" *ngIf="!isEmpty"></app-swipe-card>
+
+<app-empty-cards *ngIf="isEmpty"></app-empty-cards>
