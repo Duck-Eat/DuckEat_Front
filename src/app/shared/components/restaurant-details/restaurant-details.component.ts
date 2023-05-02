@@ -1,13 +1,13 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { Restaurant } from 'src/app/shared/models/restaurant';
-import { RestaurantServiceService } from '../../services/restaurant-service.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { RestaurantServiceService } from 'src/app/pages/results/services/restaurant-service.service';
+import { Restaurant } from '../../models/restaurant';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss'],
+  selector: 'app-restaurant-details',
+  templateUrl: './restaurant-details.component.html',
+  styleUrls: ['./restaurant-details.component.scss'],
 })
-export class DetailsComponent implements OnInit, AfterViewInit {
+export class RestaurantDetailsComponent implements OnInit {
 
   constructor(public _restaurantService: RestaurantServiceService) { }
 

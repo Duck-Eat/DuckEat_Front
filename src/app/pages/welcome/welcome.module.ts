@@ -4,14 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { WelcomePageRoutingModule } from './welcome-routing.module';
 import { WelcomePage } from './welcome.page';
+import { SharedModule } from "../../shared/module/shared.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    WelcomePageRoutingModule
-  ],
-  declarations: [WelcomePage]
+    declarations: [WelcomePage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        WelcomePageRoutingModule,
+        SharedModule
+    ]
 })
 export class WelcomePageModule {}

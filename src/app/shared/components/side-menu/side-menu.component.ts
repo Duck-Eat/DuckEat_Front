@@ -10,13 +10,23 @@ import { NavigationService } from '../../services/navigation.service';
 export class SideMenuComponent implements OnInit {
 
   private pathToFavorites: string = "/home/favorites";
+  private pathToHome: string = "/home";
+  public currentURL: string = "";
 
   constructor(public authServiceService: AuthServiceService, public navService: NavigationService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currentURL = this.navService.getCurrentURL();
+  }
 
-  redirectTo() {
+  redirectToFavorites() {
     this.navService.redirectTo(this.pathToFavorites);
+    this.currentURL = this.pathToFavorites;
+  }
+
+  redirectToHome() {
+    this.navService.redirectTo(this.pathToHome);
+    this.currentURL = this.pathToHome;
   }
 
 }

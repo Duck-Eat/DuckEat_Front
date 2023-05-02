@@ -11,7 +11,11 @@ export class NavigationService {
   constructor(private router: Router) {}
 
   redirectTo(path: string) {
-    this.router.navigate(['/home/favorites']);
+    this.router.navigate([path]);
+  }
+
+  getCurrentURL() {
+    return this.router.url;
   }
 
 }

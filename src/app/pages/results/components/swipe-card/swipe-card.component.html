@@ -1,6 +1,6 @@
 <ng-container *ngIf="!isLoading">
   <ion-card *ngFor="let r of restaurants" class="card">
-    <app-details [restaurant]="r"></app-details>
+    <app-restaurant-details [restaurant]="r"></app-restaurant-details>
     <img src="./assets/duckeat_logo.png" alt="">
 
     <ion-card-header>

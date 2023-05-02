@@ -22,11 +22,20 @@
         </ion-menu-toggle>
       </ion-item>
 
-      <ion-item>
+      <ion-item *ngIf="this.currentURL != '/home/favorites'">
         <ion-menu-toggle>
-          <ion-button (click)="redirectTo()">
+          <ion-button (click)="redirectToFavorites()">
             <ion-icon slot="start" name="heart"></ion-icon>
             Favorites
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="this.currentURL != '/home'">
+        <ion-menu-toggle>
+          <ion-button (click)="redirectToHome()">
+            <ion-icon slot="start" name="home"></ion-icon>
+            Home
           </ion-button>
         </ion-menu-toggle>
       </ion-item>
