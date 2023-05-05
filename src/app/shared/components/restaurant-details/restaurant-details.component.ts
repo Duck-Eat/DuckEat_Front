@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { RestaurantServiceService } from 'src/app/pages/results/services/restaurant-service.service';
 import { Restaurant } from '../../models/restaurant';
 
@@ -8,6 +8,11 @@ import { Restaurant } from '../../models/restaurant';
   styleUrls: ['./restaurant-details.component.scss'],
 })
 export class RestaurantDetailsComponent implements OnInit {
+
+  @Input() restaurant?: Restaurant;
+  @Input() isOpen: boolean = false;
+  @Output() closeEvent = new EventEmitter<boolean>();
+  comments: Comment[];
 
   constructor(public _restaurantService: RestaurantServiceService) { }
 
@@ -22,11 +27,7 @@ export class RestaurantDetailsComponent implements OnInit {
 
   ngAfterViewInit() { }
 
-  @Input() restaurant?: Restaurant;
-  isModalOpen: boolean = false;
-  comments: Comment[];
-
-  setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen;
+  closeModal() {
+    this.closeEvent.emit(false);
   }
 }

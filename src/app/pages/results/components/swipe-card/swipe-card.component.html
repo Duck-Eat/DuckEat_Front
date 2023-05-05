@@ -1,6 +1,5 @@
 <ng-container *ngIf="!isLoading">
-  <ion-card *ngFor="let r of restaurants" class="card">
-    <app-restaurant-details [restaurant]="r"></app-restaurant-details>
+  <ion-card *ngFor="let r of restaurants" class="card" (click)="currentRestaurant = r; modalOpen = true;">
     <img src="./assets/duckeat_logo.png" alt="">
 
     <ion-card-header>
@@ -9,6 +8,7 @@
     </ion-card-header>
   </ion-card>
 
+  <app-restaurant-details [restaurant]="currentRestaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details>
   <app-swipe-buttons (setLikedEvent)="onLiked()" (setDislikedEvent)="onDisliked()"></app-swipe-buttons>
 </ng-container>
 

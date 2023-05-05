@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestaurantService } from './services/restaurant.service';
 import { Restaurant } from 'src/app/shared/models/restaurant';
 
@@ -9,10 +9,11 @@ import { Restaurant } from 'src/app/shared/models/restaurant';
 })
 export class WelcomePage implements OnInit {
 
-  constructor(public _restaurantService: RestaurantService) { }
-
   public restaurant: Restaurant;
   public isLoading: boolean = true;
+  public modalOpen: boolean = false;
+
+  constructor(public _restaurantService: RestaurantService) { }
 
   ngOnInit() {
     this._restaurantService.getRestaurant().subscribe({
@@ -23,4 +24,7 @@ export class WelcomePage implements OnInit {
 
   changePage() { }
 
+  setOpen(b: boolean) {
+    this.modalOpen = b;
+  }
 }

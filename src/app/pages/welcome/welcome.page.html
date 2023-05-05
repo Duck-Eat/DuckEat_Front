@@ -10,14 +10,14 @@
     </ion-card-header>
   </ion-card>
 
-  <ion-card *ngIf="!this.isLoading">
-    <app-restaurant-details [restaurant]="this.restaurant"></app-restaurant-details>
+  <ion-card *ngIf="!isLoading" (click)="setOpen(true)">
+    <app-restaurant-details [restaurant]="restaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details>
     <img src="https://live.staticflickr.com/65535/50813570567_f69b84c427_b.jpg"
       alt="food"
       class="small"/>
 
     <ion-card-header>
-      <ion-card-title>Nos restaurants du moment</ion-card-title>
+      <ion-card-title>Le restaurant du moment</ion-card-title>
       <ion-card-subtitle>Clique ici !</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
