@@ -26,4 +26,8 @@ export class RestaurantServiceService {
   getRestaurantNote(id: number): Observable<any> {
     return this.http.get(`${environment.baseApiUrl}/restaurants/note/` + id);
   }
+
+  setFavorite(id: number) {
+    return this.http.post(`${environment.baseApiUrl}/favoris`, { restaurant_id: id });
+  }
 }
