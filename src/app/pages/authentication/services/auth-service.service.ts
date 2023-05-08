@@ -74,7 +74,9 @@ export class AuthServiceService {
           })
         },
         error => {
-          console.log(error)
+          console.log(error);
+          this.storage.set('userData', null);
+          this.router.navigate(['/authentication']);
         });
     })
   }

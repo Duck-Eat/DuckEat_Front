@@ -19,6 +19,9 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
   last: number = 10;
   @Output() setEmptyEvent = new EventEmitter<boolean>();
 
+  public currentRestaurant: Restaurant;
+  public modalOpen: boolean = false;
+
   constructor(public _restaurantService: RestaurantServiceService, private gestureCtrl: GestureController, private plt: Platform) {}
 
   ngOnInit() {
@@ -105,5 +108,9 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
     if (this.last <= 0) {
       this.setIsEmpty(true);
     }
+  }
+
+  setOpen(b: boolean) {
+    this.modalOpen = b;
   }
 }
