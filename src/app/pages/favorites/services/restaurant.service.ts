@@ -18,6 +18,10 @@ export class RestaurantService {
     return this.http.get(next);
   }
 
+  deleteFavorite(id: number): Observable<any> {
+    return this.http.delete(`${environment.baseApiUrl}/favoris/` + id);
+  }
+
   getRestaurant(id: number): Observable<any> {
     return this.http.get(`${environment.baseApiUrl}/restaurants/` + id);
   }

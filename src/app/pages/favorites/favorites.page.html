@@ -1,7 +1,10 @@
 <ng-container *ngIf="!isLoading">
   <ion-list lines="full" *ngFor="let r of favorites">
-    <app-restaurant-item [currentFavorite]="r"></app-restaurant-item>
+    <app-restaurant-item [currentFavorite]="r" (delete)="deleteFavorite($event)"></app-restaurant-item>
   </ion-list>
-</ng-container>
 
+</ng-container>
+<ion-infinite-scroll>
+  <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles">test</ion-infinite-scroll-content>
+</ion-infinite-scroll>
 <app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
