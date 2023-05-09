@@ -1,3 +1,7 @@
-<ion-list lines="full">
-test
-</ion-list>
+<ng-container *ngIf="!isLoading">
+  <ion-list lines="full" *ngFor="let r of favorites">
+    <app-restaurant-item [currentFavorite]="r"></app-restaurant-item>
+  </ion-list>
+</ng-container>
+
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
