@@ -13,6 +13,8 @@ export class FavoritesPage implements OnInit {
 
   public favorites!: any[];
   public isLoading: boolean = true;
+  public endListText: string = "Cliquez ici pour consulter d'avantage";
+  public bShowText: boolean = true;
   private nextPage: string = "";
 
   constructor(private _restaurantService: RestaurantService) {}
@@ -25,15 +27,21 @@ export class FavoritesPage implements OnInit {
   }
 
   onIonInfinite(ev: any) {
-    console.log("HELLO THERE");
     this._restaurantService.getNextFavorites(this.nextPage).subscribe({
       next: (res: any) => { this.favorites = [...this.favorites, ...res.data]; this.nextPage = res.links.next; },
-      error: error => console.error(error)
+      error: error => { this.endListText = "Plus rien à voir"; this.bShowText = true; }
     });
 
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 500);
+  }
+
+  onClick() {
+    this._restaurantService.getNextFavorites(this.nextPage).subscribe({
+      next: (res: any) => { this.favorites = [...this.favorites, ...res.data]; this.nextPage = res.links.next; this.bShowText = false; },
+      error: error => { this.endListText = "Plus rien à voir"; this.bShowText = true; }
+    });
   }
 
   deleteFavorite(favorite: any) {
