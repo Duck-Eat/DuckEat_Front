@@ -11,6 +11,8 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 })
 export class FavoritesPage implements OnInit {
 
+  public currentRestaurant: Restaurant;
+  public modalOpen: boolean = false;
   public favorites!: any[];
   public isLoading: boolean = true;
   public endListText: string = "Cliquez ici pour consulter d'avantage";
@@ -47,5 +49,14 @@ export class FavoritesPage implements OnInit {
   deleteFavorite(favorite: any) {
     // console.log(favorite);
     this.favorites = this.favorites.filter(x => x !== favorite);
+  }
+
+  setRestaurant(r: Restaurant) {
+    this.currentRestaurant = r;
+    this.setOpen(true);
+  }
+
+  setOpen(b: boolean) {
+    this.modalOpen = b;
   }
 }

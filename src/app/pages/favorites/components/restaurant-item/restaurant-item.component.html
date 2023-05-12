@@ -1,4 +1,4 @@
-<ion-item *ngIf="currentRestaurant !== undefined">
+<ion-item *ngIf="currentRestaurant !== undefined" (click)="onClick()">
   <ion-label>{{currentRestaurant.name}}</ion-label>
   <ion-button slot="end" color="danger" (click)="deleteFavorite()">
     <ion-icon slot="icon-only" name="trash-bin"></ion-icon>

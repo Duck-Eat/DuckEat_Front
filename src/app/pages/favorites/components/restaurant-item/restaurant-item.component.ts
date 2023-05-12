@@ -11,6 +11,7 @@ export class RestaurantItemComponent implements OnInit {
 
   @Input() currentFavorite: any;
   @Output() delete: EventEmitter<number> = new EventEmitter();
+  @Output() openEvent: EventEmitter<Restaurant> = new EventEmitter();
   public currentRestaurant: Restaurant;
 
   constructor(private _restaurantService: RestaurantService) {}
@@ -28,5 +29,9 @@ export class RestaurantItemComponent implements OnInit {
       next: (res: any) => { console.log(res); this.delete.emit(this.currentFavorite); },
       error: error => console.log(error)
     })
+  }
+
+  onClick() {
+    this.openEvent.emit(this.currentRestaurant);
   }
 }

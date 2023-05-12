@@ -1,12 +1,15 @@
 <ng-container *ngIf="!isLoading">
   <ion-list lines="full" *ngFor="let r of favorites">
-    <app-restaurant-item [currentFavorite]="r" (delete)="deleteFavorite($event)"></app-restaurant-item>
+    <app-restaurant-item [currentFavorite]="r" (delete)="deleteFavorite($event)" (openEvent)="setRestaurant($event)"></app-restaurant-item>
   </ion-list>
   <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" (click)="onClick()">
     <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles">
       <ion-text *ngIf="bShowText">{{endListText}}</ion-text>
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+
+
+  <app-restaurant-details [restaurant]="currentRestaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details>
 </ng-container>
 
 <app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
