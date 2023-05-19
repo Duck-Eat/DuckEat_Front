@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title> Mes preference</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="preference-list">
+    <ion-list [inset]="true" *ngFor="let preference of preferences">
+        <ion-item>
+            <ion-label>{{ preference.label }}</ion-label>
+            <ion-checkbox [(ngModel)]="preference.checked" (click)="onPreferenceChange(preference.id, preference.checked)">
+            </ion-checkbox>
+        </ion-item>
+    </ion-list>
+</ion-content>

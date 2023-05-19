@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: "https://api.duckeat.fr/api",
+  baseApiUrl: "http://localhost:8000/api",
 
 };
 
