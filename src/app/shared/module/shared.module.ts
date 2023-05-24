@@ -7,13 +7,19 @@ import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { SideMenuComponent } from '../components/side-menu/side-menu.component';
 import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner.component';
+import { RestaurantDetailsComponent } from '../components/restaurant-details/restaurant-details.component';
+import { MapComponent } from '../components/map/map.component';
+import { StarRankingComponent } from '../components/star-ranking/star-ranking.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     SideMenuComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    RestaurantDetailsComponent,
+    MapComponent,
+    StarRankingComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +30,10 @@ import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-s
     HeaderComponent,
     FooterComponent,
     SideMenuComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    RestaurantDetailsComponent,
+    MapComponent,
+    StarRankingComponent
   ]
 })
 export class SharedModule { }

@@ -19,6 +19,9 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
   last: number = 10;
   @Output() setEmptyEvent = new EventEmitter<boolean>();
 
+  public currentRestaurant: Restaurant;
+  public modalOpen: boolean = false;
+
   constructor(public _restaurantService: RestaurantServiceService, private gestureCtrl: GestureController, private plt: Platform) {}
 
   ngOnInit() {
@@ -83,6 +86,7 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
   onLiked() {
     const cardArray = this.cards.toArray();
+    this.addToFavorites(this.restaurants[this.last -1].id);
     const card = cardArray[this.last-1].nativeElement;
     this.removeCard(card, 0);
   }
@@ -105,5 +109,17 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
     if (this.last <= 0) {
       this.setIsEmpty(true);
     }
+  }
+
+  setOpen(b: boolean) {
+    this.modalOpen = b;
+  }
+
+  addToFavorites(restaurant_id: number) {
+    console.log(restaurant_id);
+    this._restaurantService.setFavorite(restaurant_id).subscribe({
+      next: (res: any) => { console.log(res.data) },
+      error: error => console.error(error)
+    });
   }
 }

@@ -12,10 +12,34 @@
 
   <ion-content>
     <ion-list style="text-align:center">
-      <ion-menu-toggle expand="block" fill="clear" color="transparent" (click)="authServiceService.logout()">
-        Log out
-        <ion-icon name="log-out-outline"></ion-icon>
-      </ion-menu-toggle>
+
+      <ion-item>
+        <ion-menu-toggle color="transparent">
+          <ion-button (click)="authServiceService.logout()">
+            <ion-icon slot="start" name="log-out-outline"></ion-icon>
+            Log out
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="this.currentURL != '/home/favorites'">
+        <ion-menu-toggle>
+          <ion-button (click)="redirectToFavorites()">
+            <ion-icon slot="start" name="heart"></ion-icon>
+            Favorites
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="this.currentURL != '/home'">
+        <ion-menu-toggle>
+          <ion-button (click)="redirectToHome()">
+            <ion-icon slot="start" name="home"></ion-icon>
+            Home
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-menu>
