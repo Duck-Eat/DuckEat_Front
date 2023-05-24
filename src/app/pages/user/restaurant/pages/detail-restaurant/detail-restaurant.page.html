@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Détails du restaurant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+
+  <ng-container *ngIf="!isLoading && restaurant">
+    <ion-button [routerLink]="['../edit']" expand="block">
+      <ion-icon slot="start" name="pencil-outline"></ion-icon>
+      Éditer le restaurant
+    </ion-button>
+    Restaurant : {{ restaurant.name }}
+  </ng-container>
+
+  <app-inline-alert [alertType]="InlineAlertType.info" *ngIf="!isLoading && !restaurant"
+                    title="Aucun restaurant n'a pu être chargé"
+                    content="La restaurant demandé n'existe pas ou a était supprimé.">
+    <ion-button color="dark" fill="solid" [routerLink]="['../../']">
+      <ion-icon slot="start" name="arrow-forward-circle-outline"></ion-icon>
+      Aller à la liste des restaurants
+    </ion-button>
+  </app-inline-alert>
+</ion-content>

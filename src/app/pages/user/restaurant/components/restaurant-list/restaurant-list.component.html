@@ -1,0 +1,20 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+
+<app-inline-alert title="Aucun restaurant a afficher" *ngIf="!isLoading && restaurants.length === 0">
+    <ion-button color="dark" fill="solid" [routerLink]="['add']">
+      <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+      Créer votre premier restaurant
+    </ion-button>
+</app-inline-alert>
+
+<ul>
+  <li *ngFor="let restaurant of restaurants">
+    {{ restaurant.id }} | {{ restaurant.name }}
+
+    <ion-button [routerLink]="[restaurant.id, 'detail']">
+      <ion-icon slot="start" name="eye-outline"></ion-icon>
+      Voir le restaurant
+    </ion-button>
+  </li>
+</ul>
+

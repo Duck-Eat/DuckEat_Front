@@ -1,0 +1,17 @@
+.instruction {
+  text-align: center;
+  font-style: italic;
+}
+
+.error-container {
+  padding-top: 8px;
+  color: var(--ion-color-danger);
+}
+
+.error-message {
+  padding-left: 16px;
+}
+
+.error-message ion-icon {
+  padding-right: 8px;
+}

@@ -1,0 +1,80 @@
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
+
+<div class="instruction ion-margin-bottom">
+  Tous les éléments avec une étoile <ion-text color="danger">*</ion-text> sont obligatoire.
+</div>
+
+<ion-list *ngIf="!isLoading">
+  <form [formGroup]="restaurantForm" (ngSubmit)="onSubmitForm()">
+    <ion-item lines="full">
+      <ion-label position="floating">Nom du restaurant <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="name" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <div class="error-container ion-padding-start">
+      <ng-container *ngFor="let validation of validations.name">
+        <div class="error-message" *ngIf="name.hasError(validation.type) && (name.dirty || name.touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Adresse <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="address" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <div class="error-container ion-padding-start">
+      <ng-container *ngFor="let validation of validations.name">
+        <div class="error-message" *ngIf="address.hasError(validation.type) && (address.dirty || address.touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Code postal <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="postalCode" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <div class="error-container ion-padding-start">
+      <ng-container *ngFor="let validation of validations.postalCode">
+        <div class="error-message"
+             *ngIf="postalCode.hasError(validation.type) && (postalCode.dirty || postalCode.touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Ville <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="city" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <div class="error-container ion-padding-start">
+      <ng-container *ngFor="let validation of validations.city">
+        <div class="error-message" *ngIf="city.hasError(validation.type) && (city.dirty || city.touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea [autoGrow]="true" formControlName="description"
+                    placeholder="Dite nous en quoi votre restaurant est incroyable."
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col>
+        <ion-button (click)="goBack()" routerDirection="back" color="danger" expand="block">Annuler</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button type="submit" expand="block"
+                    [disabled]="restaurantForm.invalid">{{ restaurant ? 'Modifier' : 'Ajouter' }} le restaurant
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-list>

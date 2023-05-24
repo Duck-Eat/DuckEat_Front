@@ -28,8 +28,16 @@ const routes: Routes = [
   {
     path: 'welcome',
     loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: 'user/restaurant',
+    loadChildren: () => import('./pages/user/restaurant/restaurant.module').then( m => m.RestaurantPageModule)
+  },
+  {
+    path: 'user',
+    redirectTo: 'user/restaurant',
+    pathMatch: 'full'
   }
-
 ];
 
 @NgModule({
