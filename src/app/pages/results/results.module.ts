@@ -14,20 +14,23 @@ import { SwipeButtonsComponent } from './components/swipe-buttons/swipe-buttons.
 import { EmptyCardsComponent } from './components/empty-cards/empty-cards.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ResultsPageRoutingModule,
-    SharedModule
-  ],
-  declarations: [
-    ResultsPage,
-    SwipeCardComponent,
-    CommentsComponent,
-    SwipeButtonsComponent,
-    EmptyCardsComponent,
-    TruncatePipe
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ResultsPageRoutingModule,
+        SharedModule
+    ],
+    exports: [
+        TruncatePipe
+    ],
+    declarations: [
+        ResultsPage,
+        SwipeCardComponent,
+        CommentsComponent,
+        SwipeButtonsComponent,
+        EmptyCardsComponent,
+        TruncatePipe
+    ]
 })
 export class ResultsPageModule {}

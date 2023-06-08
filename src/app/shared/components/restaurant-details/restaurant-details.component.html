@@ -1,27 +1,7 @@
-<ion-modal [isOpen]="isOpen"> <!--(willDismiss)="onWillDismiss($event)"-->
-  <ng-template>
-    <app-header></app-header>
+<div>
+  <app-map></app-map>
 
-    <ion-fab slot="fixed" vertical="top" horizontal="start" (click)="closeModal()">
-      <ion-fab-button color="secondary">
-        <ion-icon name="chevron-up-circle"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <ion-content class="ion-padding">
-      <app-map></app-map>
-
-      <div class="notes-container">
-        <app-star-ranking [value]="2.5"></app-star-ranking>
-      </div>
-
-      <!--<div *ngFor="let c of comments">
-        <app-comments [comment]="c"></app-comments>
-      </div>-->
-    </ion-content>
-
-    <div *ngIf="restaurant !== undefined">
-      <app-footer [title]=restaurant.name></app-footer>
-    </div>
-  </ng-template>
-</ion-modal>
+  <div class="notes-container">
+    <app-star-ranking [value]="2.5"></app-star-ranking>
+  </div>
+</div>

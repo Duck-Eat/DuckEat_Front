@@ -22,7 +22,16 @@
         </ion-menu-toggle>
       </ion-item>
 
-      <ion-item *ngIf="this.currentURL != '/home/favorites'">
+      <ion-item *ngIf="this.currentURL != pathToHome">
+        <ion-menu-toggle>
+          <ion-button (click)="redirectToHome()">
+            <ion-icon slot="start" name="home"></ion-icon>
+            Home
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="this.currentURL != pathToFavorites">
         <ion-menu-toggle>
           <ion-button (click)="redirectToFavorites()">
             <ion-icon slot="start" name="heart"></ion-icon>
@@ -31,14 +40,14 @@
         </ion-menu-toggle>
       </ion-item>
 
-      <ion-item *ngIf="this.currentURL != '/home'">
+      <!--<ion-item *ngIf="this.currentURL != pathToMesRestaurants">
         <ion-menu-toggle>
-          <ion-button (click)="redirectToHome()">
-            <ion-icon slot="start" name="home"></ion-icon>
-            Home
+          <ion-button (click)="redirectToMesRestaurants()">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon>
+            Mes restaurants
           </ion-button>
         </ion-menu-toggle>
-      </ion-item>
+      </ion-item>-->
 
     </ion-list>
   </ion-content>

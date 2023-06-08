@@ -1,9 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Ajouter un restaurant</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-side-menu></app-side-menu>
+<app-header title="Ajouter un restaurant"></app-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" id="main-content">
   <app-restaurant-form [isLoading]="false"></app-restaurant-form>
 </ion-content>
+
+<app-footer></app-footer>

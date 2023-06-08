@@ -11,7 +11,7 @@
   </ion-card>
 
   <ion-card *ngIf="!isLoading" (click)="setOpen(true)">
-    <app-restaurant-details [restaurant]="restaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details>
+    <app-restaurant-details-modal [restaurant]="restaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details-modal>
     <img src="https://live.staticflickr.com/65535/50813570567_f69b84c427_b.jpg"
       alt="food"
       class="small"/>

@@ -7,14 +7,10 @@
     </ion-button>
 </app-inline-alert>
 
-<ul>
-  <li *ngFor="let restaurant of restaurants">
-    {{ restaurant.id }} | {{ restaurant.name }}
-
-    <ion-button [routerLink]="[restaurant.id, 'detail']">
-      <ion-icon slot="start" name="eye-outline"></ion-icon>
-      Voir le restaurant
-    </ion-button>
-  </li>
-</ul>
-
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let restaurant of restaurants" size="12" size-md="6" size-xl="4">
+      <app-restaurant-card [restaurant]="restaurant" (deleteRestaurantId)="deleteRestaurant($event)"></app-restaurant-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

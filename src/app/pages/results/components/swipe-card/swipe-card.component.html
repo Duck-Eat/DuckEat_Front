@@ -8,7 +8,7 @@
     </ion-card-header>
   </ion-card>
 
-  <app-restaurant-details [restaurant]="currentRestaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details>
+  <app-restaurant-details-modal [restaurant]="currentRestaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details-modal>
   <app-swipe-buttons (setLikedEvent)="onLiked()" (setDislikedEvent)="onDisliked()"></app-swipe-buttons>
 </ng-container>
 

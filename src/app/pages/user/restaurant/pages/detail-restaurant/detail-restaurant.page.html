@@ -1,18 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Détails du restaurant</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-side-menu></app-side-menu>
+<app-header [title]="title"></app-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" id="main-content">
   <app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>
 
   <ng-container *ngIf="!isLoading && restaurant">
+    <ion-button class="ion-margin-bottom" fill="outline" color="dark" [routerLink]="['../../']" routerDirection="back" expand="block">
+      <ion-icon slot="start" name="arrow-forward-circle-outline"></ion-icon>
+      Retourner à la liste des restaurants
+    </ion-button>
+
     <ion-button [routerLink]="['../edit']" expand="block">
       <ion-icon slot="start" name="pencil-outline"></ion-icon>
       Éditer le restaurant
     </ion-button>
-    Restaurant : {{ restaurant.name }}
+
+    <app-restaurant-details [restaurant]="restaurant"></app-restaurant-details>
   </ng-container>
 
   <app-inline-alert [alertType]="InlineAlertType.info" *ngIf="!isLoading && !restaurant"
@@ -24,3 +27,5 @@
     </ion-button>
   </app-inline-alert>
 </ion-content>
+
+<app-footer></app-footer>

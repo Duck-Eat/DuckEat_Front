@@ -1,10 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Modifier le restaurant</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-side-menu></app-side-menu>
+<app-header title="Modifier le restaurant"></app-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" id="main-content">
   <app-restaurant-form *ngIf="restaurant" [restaurant]="restaurant" [isLoading]="isLoading"></app-restaurant-form>
 
   <app-inline-alert [alertType]="InlineAlertType.info" *ngIf="!isLoading && !restaurant"
@@ -16,3 +13,5 @@
     </ion-button>
   </app-inline-alert>
 </ion-content>
+
+<app-footer></app-footer>

@@ -1,0 +1,20 @@
+<ion-card class="card">
+  <img src="../../../../../../assets/duckeat_logo.png" alt="">
+
+  <ion-card-header>
+    <ion-card-title class="card-title">{{ restaurant.name }}</ion-card-title>
+    <ion-card-subtitle>{{ restaurant.description | truncate: 85 }} </ion-card-subtitle>
+  </ion-card-header>
+
+  <div class="ion-padding-horizontal ion-padding-bottom actions">
+    <ion-button [routerLink]="[restaurant.id, 'detail']">
+      <ion-icon slot="start" name="eye-outline"></ion-icon>
+      Voir les détails
+    </ion-button>
+
+    <ion-button (click)="presentActionSheet()">
+      <ion-icon slot="start" name="ellipsis-vertical-circle-outline"></ion-icon>
+      Actions
+    </ion-button>
+  </div>
+</ion-card>

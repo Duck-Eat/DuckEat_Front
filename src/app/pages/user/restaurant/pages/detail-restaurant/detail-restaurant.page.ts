@@ -13,6 +13,7 @@ export class DetailRestaurantPage implements OnInit {
 
   restaurant: Restaurant | undefined;
   isLoading: boolean = true;
+  title: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -31,7 +32,10 @@ export class DetailRestaurantPage implements OnInit {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.restaurantService.getRestaurantNo404(id)
       .subscribe({
-        next: restaurant => this.restaurant = restaurant,
+        next: restaurant => {
+          this.restaurant = restaurant;
+          this.title = restaurant?.name ?? '';
+        },
         complete: () => this.isLoading = false,
       });
   }

@@ -3,13 +3,15 @@ import { RestaurantServiceService } from 'src/app/pages/results/services/restaur
 import { Restaurant } from '../../models/restaurant';
 
 @Component({
-  selector: 'app-restaurant-details',
-  templateUrl: './restaurant-details.component.html',
-  styleUrls: ['./restaurant-details.component.scss'],
+  selector: 'app-restaurant-details-modal',
+  templateUrl: './restaurant-details-modal.component.html',
+  styleUrls: ['./restaurant-details-modal.component.scss'],
 })
-export class RestaurantDetailsComponent implements OnInit {
+export class RestaurantDetailsModalComponent implements OnInit {
 
   @Input() restaurant?: Restaurant;
+  @Input() isOpen: boolean = false;
+  @Output() closeEvent = new EventEmitter<boolean>();
   comments: Comment[];
 
   constructor(public _restaurantService: RestaurantServiceService) { }
@@ -21,5 +23,11 @@ export class RestaurantDetailsComponent implements OnInit {
         error: error => console.error(error)
       });
     }
+  }
+
+  ngAfterViewInit() { }
+
+  closeModal() {
+    this.closeEvent.emit(false);
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Restaurant} from "../../../../../shared/models/restaurant";
 
 @Component({
@@ -10,6 +10,7 @@ export class RestaurantListComponent implements OnInit {
 
   @Input() restaurants: Restaurant[] = [];
   @Input() isLoading: boolean = true;
+  @Output() deleteRestaurantId: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
   }
@@ -17,4 +18,7 @@ export class RestaurantListComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteRestaurant(id: number) {
+    this.deleteRestaurantId.emit(id);
+  }
 }

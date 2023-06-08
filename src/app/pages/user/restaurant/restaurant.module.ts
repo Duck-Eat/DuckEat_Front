@@ -10,6 +10,8 @@ import { RestaurantPage } from './restaurant.page';
 import {RestaurantListComponent} from "./components/restaurant-list/restaurant-list.component";
 import {SharedModule} from "../../../shared/module/shared.module";
 import {DetailRestaurantPageModule} from "./pages/detail-restaurant/detail-restaurant.module";
+import {RestaurantCardComponent} from "./components/restaurant-card/restaurant-card.component";
+import {ResultsPageModule} from "../../results/results.module";
 
 @NgModule({
   imports: [
@@ -18,8 +20,9 @@ import {DetailRestaurantPageModule} from "./pages/detail-restaurant/detail-resta
     IonicModule,
     RestaurantPageRoutingModule,
     SharedModule,
-    DetailRestaurantPageModule
+    DetailRestaurantPageModule,
+    ResultsPageModule
   ],
-    declarations: [RestaurantPage, RestaurantListComponent]
+    declarations: [RestaurantPage, RestaurantListComponent, RestaurantCardComponent]
 })
 export class RestaurantPageModule {}
