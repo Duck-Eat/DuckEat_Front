@@ -9,74 +9,109 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+
 /* Core CSS required for Ionic components to work properly */
+
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
+
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
+
 @import "~@ionic/angular/css/padding.css";
 @import "~@ionic/angular/css/float-elements.css";
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-
-
 .header {
-  background-color: #048B9A;
-  max-height: 1vh;
+    background-color: #048B9A;
+    max-height: 1vh;
 }
 
 .header-logo {
-  height: 5vh;
-  width: 5vw;
-  min-width: 40px;
-  min-height: 40px;
+    height: 5vh;
+    width: 5vw;
+    min-width: 40px;
+    min-height: 40px;
 }
 
 .footer {
-  background-color: #035a64;
+    background-color: #035a64;
 }
 
 .container {
-  height: 45vh;
-  position: relative;
+    height: 45vh;
+    position: relative;
 }
 
 .center {
-  margin: 0;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .column {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .bloc {
-  display: flex;
-  flex-direction: column;
-  width: 75vw;
-  border-radius: 10px;
-  margin-bottom: 4vh;
-  // padding: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    border-radius: 10px;
+    margin-bottom: 4vh;
+    // padding: 16px;
 }
 
 .btn.small {
-  margin-top: 5vh;
-  margin-bottom: -1vh;
+    margin-top: 5vh;
+    margin-bottom: -1vh;
 }
 
-div.text{
-  margin-top: 10px;
-  margin-bottom: 15px;
-  line-height: 200%;
+div.text {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    line-height: 200%;
+}
 
+app-header {
+    .toolbar-background-shape {
+        background-color: #206c7c;
+        position: absolute;
+        border-radius: 50%;
+        height: 25vh;
+        width: 120%;
+        transform: translate(-9vw, -13vh);
+    }
+    ion-header::after {
+        display: none;
+        // border-radius: 50%;
+        // height: 25vh;
+        // width: 120%;
+        // transform: translate(-9vw, -15vh);
+        // background-color: none;
+    }
+}
+
+app-welcome {
+    ion-content {
+        transform: translateY(10vh);
+        --offset-bottom: 5rem !important;
+    }
+    ion-card {
+        margin: 1rem 3rem 1rem 3rem;
+        border-radius: 1rem;
+        border: 3px solid darkgrey;
+        ion-card-header {
+            outline: 3px solid darkgrey;
+        }
+    }
 }
