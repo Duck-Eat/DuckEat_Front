@@ -68,7 +68,6 @@
     width: 75vw;
     border-radius: 10px;
     margin-bottom: 4vh;
-    // padding: 16px;
 }
 
 .btn.small {
@@ -153,6 +152,10 @@ app-authentication {
 app-star-ranking {
     display: flex;
     justify-content: center;
+}
+
+.favorites-list {
+    transform: translateY(10vh);
 }
 
 ion-modal {
