@@ -89,9 +89,12 @@ app-header {
         border-radius: 50%;
         height: 25vh;
         width: 120%;
-        transform: translate(-9vw, -13vh);
+        transform: translate(-9vw, -12vh);
     }
     ion-header::after {
+        display: none;
+    }
+    img {
         display: none;
     }
 }
@@ -114,6 +117,37 @@ app-welcome {
 ion-content.ion-padding,
 ion-fab {
     transform: translateY(10vh);
+}
+
+app-authentication {
+    img {
+        display: block;
+        transform: translateX(20vw);
+        position: absolute;
+        height: 16rem;
+    }
+    app-header {
+        .toolbar-background-shape {
+            background-color: #206c7c;
+            position: absolute;
+            border-radius: 50%;
+            height: 58vh;
+            width: 112%;
+            transform: translate(-5.75vw, -36vh);
+        }
+    }
+    ion-toolbar {
+        display: none;
+    }
+    ion-content {
+        transform: translateY(40vh);
+    }
+    app-connection,
+    app-inscription {
+        ion-button {
+            margin: 2rem 6rem;
+        }
+    }
 }
 
 app-star-ranking {
