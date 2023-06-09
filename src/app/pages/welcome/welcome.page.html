@@ -1,24 +1,20 @@
 <ion-content>
-  <ion-card [routerLink]="['/home/results']">
-    <img src="https://live.staticflickr.com/65535/50813570567_f69b84c427_b.jpg"
-      alt="food"
-      class="small"/>
+    <ion-card [routerLink]="['/home/results']">
+        <img src="https://cdn.pixabay.com/photo/2019/12/01/15/08/if-the-4665686_1280.jpg" alt="food" class="small" />
 
-    <ion-card-header>
-      <ion-card-title>Envie de quelque chose ?</ion-card-title>
-      <ion-card-subtitle>Clique ici !</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+        <ion-card-header>
+            <ion-card-title>Envie de quelque chose ?</ion-card-title>
+            <ion-card-subtitle>Clique ici !</ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
 
-  <ion-card *ngIf="!isLoading" (click)="setOpen(true)">
-    <app-restaurant-details [restaurant]="restaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details>
-    <img src="https://live.staticflickr.com/65535/50813570567_f69b84c427_b.jpg"
-      alt="food"
-      class="small"/>
+    <ion-card *ngIf="!isLoading" (click)="setOpen(true)">
+        <app-restaurant-details [restaurant]="restaurant" [isOpen]="modalOpen" (closeEvent)="setOpen($event)"></app-restaurant-details>
+        <img src="https://cdn.pixabay.com/photo/2017/06/27/16/23/japan-2447944_1280.jpg" alt="food" class="small" />
 
-    <ion-card-header>
-      <ion-card-title>Le restaurant du moment</ion-card-title>
-      <ion-card-subtitle>Clique ici !</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+        <ion-card-header>
+            <ion-card-title>Le restaurant du moment</ion-card-title>
+            <ion-card-subtitle>Clique ici !</ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
 </ion-content>

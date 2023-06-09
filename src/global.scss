@@ -93,11 +93,6 @@ app-header {
     }
     ion-header::after {
         display: none;
-        // border-radius: 50%;
-        // height: 25vh;
-        // width: 120%;
-        // transform: translate(-9vw, -15vh);
-        // background-color: none;
     }
 }
 
@@ -112,6 +107,26 @@ app-welcome {
         border: 3px solid darkgrey;
         ion-card-header {
             outline: 3px solid darkgrey;
+        }
+    }
+}
+
+ion-content.ion-padding,
+ion-fab {
+    transform: translateY(10vh);
+}
+
+app-star-ranking {
+    display: flex;
+    justify-content: center;
+}
+
+ion-modal {
+    ion-card {
+        margin: 1rem 2rem 1rem 2rem;
+        border: 3px solid #206c7c;
+        ion-card-header {
+            outline: 3px solid #206c7c;
         }
     }
 }
