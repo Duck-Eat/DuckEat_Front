@@ -65,6 +65,7 @@ export class SwipeCardComponent implements OnInit, AfterViewInit {
 
           if (ev.deltaX > 150) {
             card.nativeElement.style.transform = `translateX(${+this.plt.width() * 2}px) rotate(${ev.deltaX / 4}deg)`;
+            this.addToFavorites(this.restaurants[this.last -1].id);
             this.removeCard(card.nativeElement, 1000);
 
           } else if (ev.deltaX < -150) {
