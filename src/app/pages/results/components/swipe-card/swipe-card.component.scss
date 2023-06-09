@@ -1,24 +1,28 @@
 .card {
-  box-shadow: 0px 1px 3px secondary;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  overflow: hidden;
-  position: absolute;
-  background-color: primary;
+    box-shadow: 0px 1px 3px secondary;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: absolute;
+    background-color: primary;
+    transform: translateY(10vh);
 }
-.card img{
-  width: 100%;
-  min-width: 10%;
-  max-width: none;
+
+.card img {
+    width: 100%;
+    min-width: 10%;
+    max-width: none;
 }
-.card-title{
-  font-size: 20px;
-  margin: 10px 15px;
+
+.card-title {
+    font-size: 20px;
+    margin: 10px 15px;
 }
 
 .visible {
-  display: block;
+    display: block;
 }
+
 .hidden {
-  display: none;
+    display: none;
 }
